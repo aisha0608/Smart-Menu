@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurant</title>
+    <style>
+      .header {
+        width: 100%;
+      }
+      .name {
+        float: left;
+        width: 25%;
+        text-align: center;
+      }
+      .feature {
+        float: left;
+        width: 50%;
+        text-align: center;
+        padding: 25px 0;
+      }
+      .home {
+        float: left;
+        width: 33%;
+      }
+      .menu {
+        float: left;
+        width: 33%;
+      }
+      .contact {
+        float: left;
+        width: 33%;
+      }
+      .res {
+        float: left;
+        width: 25%;
+        text-align: center;
+        padding: 10px 0;
+      }
+      .text {
+        margin-top: 3%;
+        background-color: #ecebeb;
+        height: 350px;
+        padding-top: 100px;
+        padding-left: 10%;
+        padding-right: 0%;
+        width: 30%;
+        float: left;
+        text-align: center;
+      }
+      .image {
+        margin-top: 3%;
+        background-color: #ecebeb;
+        height: 450px;
+        width: 60%;
+        float: left;
+        text-align: center;
+        margin-bottom: 60px;
+      }
+      .image img {
+        width: 350px;
+        padding-top: 50px;
+      }
+      button {
+        color: white;
+        background-color: red;
+        border-radius: 30px;
+        border: none;
+        padding: 15px 30px;
+      }
+      .menu_heading h1 {
+        text-align: center;
+        padding-top: 15px;
+      }
+      span {
+        color: red;
+      }
+      #filters {
+        width: 25%;
+        float: left;
+        padding-left: 5%;
+      }
+      #menu-display {
+        width: 70%;
+        float: left;
+      }
+      #filters button {
+        margin-top: 15px;
+        padding: 10px 20px;
+        background-color: #333;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      #filters button:hover {
+        background-color: #555;
+      }
+      .menu_image {
+        text-align: center;
+        float: left;
+      }
+      .menu_image img {
+        width: 300px;
+        margin: 20px;
+      }
+      .menu-row {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="name"><h2>Restaurant</h2></div>
+      <div class="feature">
+        <div class="home">Home</div>
+        <div class="menu">Menu</div>
+        <div class="contact">Contact</div>
+      </div>
+      <div class="res"><button>Reservation</button></div>
+    </div>
+    <div class="text">
+      <h1>ENJOY YOUR HEALTHY DELICIOUS FOOD</h1>
+      <p>
+        However, the praise of pain. So it will happen to the consequences of
+        pleasure. And when he asked for it, which he was happy.
+      </p>
+      <button>Book a Table</button>
+    </div>
+    <div class="image"><img src="menu-item-1.png" alt="Food Image" /></div>
+    <div class="menu_heading">
+      <h1>CHECK OUR <span>YUMMY MENU</span></h1>
+    </div>
+
+    <div id="filters">
+      <h2>Filters</h2>
+      <label for="category">Category:</label>
+      <select id="category">
+        <option value="all">All</option>
+        <option value="appetizers">Appetizers</option>
+        <option value="entrees">Entrees</option>
+        <option value="desserts">Desserts</option>
+      </select>
+      <h3>Dietary Preferences:</h3>
+      <label><input type="checkbox" id="vegan" /> Vegan</label><br />
+      <label><input type="checkbox" id="gluten-free" /> Gluten-free</label
+      ><br />
+      <label><input type="checkbox" id="vegetarian" /> Vegetarian</label>
+      <h3>Price Range:</h3>
+      <label><input type="radio" name="price" value="0-10" /> $0-$10</label
+      ><br />
+      <label><input type="radio" name="price" value="10-20" /> $10-$20</label
+      ><br />
+      <label><input type="radio" name="price" value="20-30" /> $20-$30</label>
+      <br />
+      <button onclick="filterMenu()">Apply Filters</button>
+    </div>
+    <div id="menu-display">
+      <div class="menu_image">
+        <img src="menu-item-2.png" alt="item 1" />
+        <p>Spring Rolls</p>
+        <p></p>
+      </div>
+      <div class="menu_image">
+        <img src="menu-item-3.png" alt="item 2" />
+        <p>Grilled Salmon</p>
+      </div>
+      <div class="menu_image">
+        <img src="menu-item-4.png" alt="item 3" />
+        <p>Caesar Salad</p>
+      </div>
+      <div class="menu_image">
+        <img src="menu-item-5.png" alt="item 4" />
+        <p>Chocolate Cake</p>
+      </div>
+      <div class="menu_image">
+        <img src="menu-item-7.jpg" alt="item 5" />
+        <p>Margherita Pizza</p>
+      </div>
+      <div class="menu_image">
+        <img src="menu-item-6.png" alt="item 6" />
+        <p>French Toast Bake.</p>
+        <p></p>
+      </div>
+    </div>
+    <script>
+      const menuItems = [
+        {
+          name: "Caesar Salad",
+          category: "appetizers",
+          price: 8.99,
+          dietary: ["gluten-free", "vegetarian"],
+          image: "menu-item-4.png",
+        },
+        {
+          name: "Margherita Pizza",
+          category: "entrees",
+          price: 12.99,
+          dietary: ["vegetarian"],
+          image: "menu-item-7.jpg",
+        },
+        {
+          name: "Grilled Salmon",
+          category: "entrees",
+          price: 18.99,
+          dietary: [],
+          image: "menu-item-3.png",
+        },
+        {
+          name: "Chocolate Cake",
+          category: "desserts",
+          price: 7.99,
+          dietary: ["vegetarian"],
+          image: "menu-item-5.png",
+        },
+        {
+          name: "Spring Rolls",
+          category: "appetizers",
+          price: 5.99,
+          dietary: ["vegan"],
+          image: "menu-item-2.png",
+        },
+        {
+          name: "French Toast Bake",
+          category: "appetizers",
+          price: 10.99,
+          dietary: [],
+          image: "menu-item-6.png",
+        },
+      ];
+
+      function displayMenu(menu) {
+        const menuDisplay = document.getElementById("menu-display");
+        menuDisplay.innerHTML = "";
+
+        let rowDiv;
+        for (let i = 0; i < menu.length; i++) {
+          if (i % 3 === 0) {
+            rowDiv = document.createElement("div");
+            rowDiv.classList.add("menu-row");
+            menuDisplay.appendChild(rowDiv);
+          }
+
+          const item = menu[i];
+          const itemDiv = document.createElement("div");
+          itemDiv.classList.add("menu_image");
+          itemDiv.innerHTML = `
+            <img src="${item.image}" alt="${item.name}" />
+            <p>${item.name}</p>
+            <p>$${item.price.toFixed(2)}</p>
+        `;
+          rowDiv.appendChild(itemDiv);
+        }
+      }
+      function filterMenu() {
+        const category = document.getElementById("category").value;
+        const vegan = document.getElementById("vegan").checked;
+        const glutenFree = document.getElementById("gluten-free").checked;
+        const vegetarian = document.getElementById("vegetarian").checked;
+        const price = document.querySelector('input[name="price"]:checked')
+          ? document.querySelector('input[name="price"]:checked').value
+          : null;
+
+        let filteredMenu = menuItems.filter((item) => {
+          if (category !== "all" && item.category !== category) return false;
+          if (
+            (vegan || glutenFree || vegetarian) &&
+            !item.dietary.some(
+              (preference) =>
+                (vegan && item.dietary.includes("vegan")) ||
+                (glutenFree && item.dietary.includes("gluten-free")) ||
+                (vegetarian && item.dietary.includes("vegetarian"))
+            )
+          )
+            return false;
+          return true;
+        });
+
+        if (price) {
+          const priceRange = price.split("-");
+          let minPrice = parseFloat(priceRange[0]);
+          let maxPrice = parseFloat(priceRange[1]);
+
+          filteredMenu = filteredMenu.filter(
+            (item) => item.price >= minPrice && item.price <= maxPrice
+          );
+        }
+        displayMenu(filteredMenu);
+      }
+    </script>
+  </body>
+</html>
