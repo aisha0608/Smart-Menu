@@ -1,0 +1,15 @@
+Vegetarian Burgers
+
+1. Classic Veggie Delight
+   - A hearty mix of chickpeas, black beans, and sweet corn, topped with fresh lettuce, tomato, and a tangy avocado spread, all nestled in a whole grain bun.
+
+2. Mediterranean Falafel Burger
+   - Crispy falafel patty made with chickpeas and spices, served with cucumber, tomatoes, red onion, and a dollop of creamy tzatziki sauce in a pita-style bun.
+
+3. Portobello Mushroom Burger
+   - A marinated and grilled Portobello mushroom cap with melted Swiss cheese, caramelized onions, and garlic aioli, served on a toasted brioche bun.
+
+4. Spicy Black Bean Burger
+   - A zesty black bean patty with pepper jack cheese, jalapeños, spicy mayo, lettuce, and tomato on a sesame seed bun.
+
+

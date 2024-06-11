@@ -1,0 +1,18 @@
+Vegetarian Pizzas
+
+1. Margherita
+   - A classic pizza with a fresh tomato sauce base, mozzarella cheese, and fragrant basil leaves, drizzled with extra virgin olive oil.
+
+2. Veggie Supreme
+   - Loaded with bell peppers, red onions, mushrooms, black olives, and fresh tomatoes, topped with mozzarella and a sprinkle of oregano.
+
+3. Four Cheese Pizza
+   - A decadent blend of mozzarella, cheddar, parmesan, and gorgonzola cheeses on a crispy crust with a rich tomato sauce.
+
+4. Mediterranean Delight
+   - Featuring a base of tangy tomato sauce, topped with spinach, artichoke hearts, sun-dried tomatoes, feta cheese, and Kalamata olives.
+
+5. Pesto Veggie
+   - A basil pesto base topped with roasted red peppers, zucchini, cherry tomatoes, mozzarella, and a sprinkle of parmesan.
+
+
