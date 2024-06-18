@@ -4,27 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Page</title>   
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-   
+       body {
+            font-family: 'Poppins', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
         }
+
 
         .container {
             display: flex;
             flex-direction: row;
-            height: 93vh;
+            height: 100vh;
             background-color: #ffd60a;
         }
 
         .sidebar {
-            background-color:#18181c;
+            background-color:#0d1b2a;
             color: white;
             padding: 20px;
             width: 350px;
-            min-height: 100vh; 
+           
             
             overflow-y: auto; 
         }
@@ -87,7 +88,7 @@
         .order {
             background-color: white;
             border: 1px solid #ddd;
-            border-left: 7px solid red;
+            border-left: 7px solid #ef476f;
             border-radius: 5px;
             margin: 10px;
             padding: 10px;
@@ -117,49 +118,11 @@
             color: #777;
         }
 
-        .footer {
-            display: flex;
-        height:55px;
-            background-color: #333;
-            color: white;
-        }
 
-        .footer .btn {
-            padding: 10px 20px;
-            border: none;
-            background-color: #555;
-            color: white;
-            cursor: pointer;
-        
-            width:200px;
-            font-size: 20px;;
-            
-        }
-
-        #one,#eight
-        {
-            background-color: red;
-        }
-        #two
-        {
-            background-color: green;
-        }
-        #three,#five
-        {
-            background-color: #457b9d;
-        }
-        #four,#six
-        {
-            background-color:#264653;
-        }
-        #seven
-        {
-            background-color: orangered;
-        }
         .order {
             position: relative;
             padding-bottom: 50px; 
-            border: 5px solid red; 
+            border: 5px solid #ef476f; 
             background-color: #ffbeb9;
         }
         .order .order-delivered-button {
@@ -168,7 +131,7 @@
             left: 50%;
             transform: translateX(-50%);
             padding: 10px 20px;
-            background-color: #f44336;
+            background-color: #ed2352;
             color: white;
             border: none;
             border-radius: 5px;
@@ -178,7 +141,7 @@
             background-color: #d32f2f; 
         }
         .order-delivered {
-            border-color: green;
+            border-color: #5ac981;
         }
         
 
@@ -370,16 +333,7 @@
             </div>
         </div>
     </div>
-    <div class="footer">
-        <button class="btn btn-priority" id="one">PRIORITY</button>
-        <button class="btn btn-bump" id="two">BUMP</button>
-        <button class="btn btn-cooking" id="three">COOKING</button>
-        <button class="btn btn-join" id="four">JOIN</button>
-        <button class="btn btn-print" id="five">PRINT</button>
-        <button class="btn btn-info" id="six">INFO</button>
-        <button class="btn btn-recall" id="seven">RECALL</button>
-        <button class="btn btn-recall-last" id="eight">RECALL LAST</button>
-    </div>
+    
     <script>
        function markOrderDelivered(button) {
     var orderBox = button.closest('.order');
@@ -402,4 +356,3 @@
     </script>
 </body>
 </html>
-
