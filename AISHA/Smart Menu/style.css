@@ -3,7 +3,7 @@
 
 /* General styles */
 body {
-    background-color: #f5f5dc; /* Light yellow background */
+    background-color: #f5f5dc; 
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
@@ -15,8 +15,8 @@ body {
 }
   
 .header {
-    background-color: #34a0a4; /* Light teal */
-    color: #d9ed92; /* Dark blue text color */
+    background-color: #34a0a4; 
+    color: #d9ed92; 
     padding: 30px 50px;
     display: flex;
     justify-content: space-between;
@@ -41,22 +41,22 @@ body {
 }
   
 .header .shopping {
-    margin-left: auto; /* Pushes shopping cart to the right */
+    margin-left: auto;
 }
   
 .header .shopping img {
-    width: 30px; /* Adjust size as needed */
+    width: 30px; 
     cursor: pointer;
     margin-right: 10px;
 }
   
 .header .shopping .quantity {
-    background: #d9ed92; /* Bright yellow */
+    background: #d9ed92; 
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #34a0a4; /* Dark green */
+    color: #34a0a4; 
     width: 24px;
     height: 24px;
     font-size: 14px;
@@ -65,13 +65,13 @@ body {
 
 .list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Three items per row */
+    grid-template-columns: repeat(3, 1fr); 
     gap: 20px;
     margin-top: 20px;
 }
   
 .list .item {
-    background-color: #c5e1a5; /* Light green */
+    background-color: #c5e1a5; 
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 15px;
@@ -100,7 +100,7 @@ body {
 .list .item .title {
     font-weight: 600;
     margin-top: 10px;
-    color: #34a0a4; /* Dark green */
+    color: #34a0a4; 
     font-size: 1.2rem;
 }
   
@@ -112,14 +112,14 @@ body {
   
 .list .item .price {
     margin: 10px 0;
-    color: #184e77; /* Darker green for price */
+    color: #184e77; 
     font-size: 1.2rem;
-    font-weight: bold; /* Ensure price stands out */
+    font-weight: bold; 
 }
   
 .list .item button {
-    background-color: #168aad; /* Bright yellow */
-    color: white; /* Dark green */
+    background-color: #168aad; 
+    color: white;
     width: 100%;
     padding: 10px;
     border: none;
@@ -131,7 +131,7 @@ body {
 }
   
 .list .item button:hover {
-    background-color: #c59c19; /* Darker yellow on hover */
+    background-color: #c59c19;
 }
 
 .card {
@@ -139,14 +139,14 @@ body {
     top: 0;
     right: -500px;
     width: 500px;
-    background-color: #1a759f; /* Dark green */
+    background-color: #1a759f; 
     height: 100vh;
     transition: right 0.5s ease;
     z-index: 1000;
     padding: 20px;
     box-sizing: border-box;
     overflow-y: auto;
-    border-left: 5px solid #d9ed92; /* Bright yellow border */
+    border-left: 5px solid #d9ed92; 
 }
   
 .active .card {
@@ -154,7 +154,7 @@ body {
 }
   
 .card h1 {
-    color: #d9ed92; /* Bright yellow */
+    color: #d9ed92; 
     font-weight: 300;
     margin: 0 0 20px 0;
     padding: 0;
@@ -225,12 +225,12 @@ body {
 }
   
 .listCard li .details .quantity {
-    color: #2e7d32; /* Dark green */
+    color: #2e7d32; 
     font-size: 0.9rem;
 }
   
 .listCard li .price {
-    color: #1e6091; /* Darker green for price */
+    color: #1e6091; 
     font-size: 1.2rem;
     font-weight: bold;
 }
@@ -262,18 +262,18 @@ body {
     font-size: 0.9rem;
 }
   
-/* Media query for responsiveness */
+
 @media (max-width: 1024px) {
     .container {
         width: 90%;
     }
     .list {
-        grid-template-columns: repeat(2, 1fr); /* Two items per row on smaller screens */
+        grid-template-columns: repeat(2, 1fr); 
     }
 }
   
 @media (max-width: 768px) {
     .list {
-        grid-template-columns: 1fr; /* Single item per row on mobile */
+        grid-template-columns: 1fr; 
     }
 }
