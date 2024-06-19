@@ -2,27 +2,33 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shopping Cart</title>
+    <title>Urban Fork Menu</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
+    <header class="header">
+      <div class="title">
+        <h1>URBAN FORK</h1>
+        <h2>Online Ordering</h2>
+      </div>
+      <div class="shopping">
+        <img src="image/shopping.svg" alt="Shopping Cart" />
+        <span class="quantity">0</span>
+      </div>
+    </header>
     <div class="container">
-      <header>
-        <h1>Your Shopping Cart</h1>
-        <div class="shopping">
-          <img src="image/shopping.svg" />
-          <span class="quantity">0</span>
-        </div>
-      </header>
       <div class="list"></div>
     </div>
     <div class="card">
       <h1>Cart</h1>
       <ul class="listCard"></ul>
       <div class="checkOut">
-        <div class="total">0</div>
+        <div class="total">₹0</div>
         <div class="closeShopping">Close</div>
       </div>
     </div>

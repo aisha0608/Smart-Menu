@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OTP Verification</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body,
+      input,
+      select {
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #34d399, #fef08a);
+      }
+
+      .container {
+        position: relative;
+        width: 400px;
+        background-color: #fff;
+        padding: 2rem 1.5rem;
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        text-align: center;
+      }
+
+      .header {
+        margin-bottom: 1.5rem;
+      }
+
+      .header h1 {
+        font-size: 2.5rem;
+        color: #34d399;
+        margin-bottom: 0.5rem;
+      }
+
+      .header p {
+        font-size: 1rem;
+        color: #888;
+      }
+
+      .forms-container {
+        width: 100%;
+        height: 100%;
+      }
+
+      .signin-signup {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      form {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .input-field {
+        width: 100%;
+        background-color: #f9f9f9;
+        margin: 10px 0;
+        height: 55px;
+        border-radius: 30px;
+        display: flex;
+        align-items: center;
+        padding: 0 15px;
+        border: 1px solid #e0e0e0;
+        transition: all 0.3s;
+      }
+
+      .input-field:hover {
+        border-color: #34d399;
+      }
+
+      .input-field i {
+        color: #acacac;
+        margin-right: 10px;
+      }
+
+      .input-field input,
+      .input-field select {
+        background: none;
+        outline: none;
+        border: none;
+        font-size: 1rem;
+        color: #333;
+      }
+
+      .input-field input::placeholder {
+        color: #aaa;
+        font-weight: 500;
+      }
+
+      .phone-number-field {
+        display: flex;
+        align-items: center;
+      }
+
+      .country-code {
+        margin-right: 2px;
+        padding: 2px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+
+      .btn {
+        width: 100%;
+        background-color: #34d399;
+        border: none;
+        outline: none;
+        height: 49px;
+        border-radius: 30px;
+        color: #fff;
+        text-transform: uppercase;
+        font-weight: 600;
+        margin: 10px 0;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+
+      .btn:hover {
+        background-color: #2bb178;
+      }
+
+      .btn:active {
+        background-color: #249966;
+      }
+
+      .otp-display {
+        display: none;
+        margin-top: 1rem;
+        font-size: 1.2rem;
+        color: #34d399;
+        font-weight: 600;
+      }
+
+      .otp-input {
+        display: none;
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      .otp-input input {
+        width: 100%;
+        padding: 10px;
+        font-size: 1rem;
+        border: 1px solid #e0e0e0;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Urban Fork</h1>
+        <p>Secure Your Account with OTP Verification</p>
+      </div>
+      <div class="forms-container">
+        <div class="signin-signup">
+          <!-- OTP Verification Form -->
+          <form action="#" class="otp-form" id="otp-form">
+            <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input type="text" placeholder="Name" id="otp-username" />
+            </div>
+            <div class="input-field phone-number-field">
+              <i class="fas fa-mobile-alt"></i>
+              <select id="otp-country-code" class="country-code">
+                <option value="+91">+91</option>
+                <option value="+44">+44</option>
+                <option value="+1">+1</option>
+                <option value="+61">+61</option>
+                <option value="+81">+81</option>
+                <option value="+49">+49</option>
+                <option value="+33">+33</option>
+                <option value="+55">+55</option>
+                <option value="+86">+86</option>
+                <option value="+7">+7</option>
+              </select>
+              <input
+                type="text"
+                placeholder="Mobile number"
+                id="otp-no"
+                class="mobile-number"
+                maxlength="10"
+                pattern="\d*"
+              />
+            </div>
+            <button type="submit" class="btn solid">Get OTP</button>
+            <div class="otp-display" id="otp-display"></div>
+            <div class="otp-input" id="otp-input">
+              <input type="text" placeholder="Enter OTP" id="user-otp" />
+              <button type="button" class="btn solid" id="verify-otp">
+                Verify OTP
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script>
+      let generatedOtp;
+      document
+        .getElementById("otp-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const name = document.getElementById("otp-username").value;
+          const countryCode = document.getElementById("otp-country-code").value;
+          const mobileNumber = document.getElementById("otp-no").value;
+
+          if (mobileNumber.length !== 10 || isNaN(mobileNumber)) {
+            alert("Please enter a valid 10-digit mobile number");
+            return;
+          }
+
+          // Generate OTP
+          generatedOtp = Math.floor(100000 + Math.random() * 900000);
+          const otpDisplay = document.getElementById("otp-display");
+          otpDisplay.style.display = "block";
+          otpDisplay.innerText = `Your OTP is: ${generatedOtp}`;
+
+          // Show OTP input field and verify button
+          document.getElementById("otp-input").style.display = "block";
+        });
+
+      document
+        .getElementById("verify-otp")
+        .addEventListener("click", function () {
+          const userOtp = document.getElementById("user-otp").value;
+
+          if (userOtp == generatedOtp) {
+            alert("OTP verified successfully");
+          } else {
+            alert("Incorrect OTP. Please try again.");
+          }
+        });
+    </script>
+  </body>
+</html>
