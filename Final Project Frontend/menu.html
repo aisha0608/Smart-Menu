@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Urban Fork Menu</title>
@@ -9,29 +9,46 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-  </head>
-  <body>
+</head>
+<body>
     <header class="header">
-      <div class="title">
-        <h1>URBAN FORK</h1>
-        <h2>Online Ordering</h2>
-      </div>
-      <div class="shopping">
-        <img src="image/shopping.svg" alt="Shopping Cart" />
-        <span class="quantity">0</span>
-      </div>
+        <div class="title">
+            <h1>URBAN FORK</h1>
+            <h2>Online Ordering</h2>
+        </div>
+        <div class="shopping">
+            <img src="image/shopping.svg" alt="Shopping Cart" />
+            <span class="quantity">0</span>
+        </div>
     </header>
+    <div class="filters">
+        <select id="category">
+            <option value="all">All Categories</option>
+            <option value="biryani">Biryani</option>
+            <option value="pizza">Pizza</option>
+            <option value="salad">Salad</option>
+            <option value="dessert">Dessert</option>
+        </select>
+        <div>
+            <label for="price">Price Range</label>
+            <label><input type="radio" name="price" value="0-100"> 0 - 100</label>
+            <label><input type="radio" name="price" value="101-200"> 101 - 200</label>
+            <label><input type="radio" name="price" value="201-300"> 201 - 300</label>
+            <label><input type="radio" name="price" value="301-400"> 301 - 400</label>
+        </div>
+        <button onclick="filterProducts()">Filter</button>
+    </div>
     <div class="container">
-      <div class="list"></div>
+        <div class="list"></div>
     </div>
     <div class="card">
-      <h1>Cart</h1>
-      <ul class="listCard"></ul>
-      <div class="checkOut">
-        <div class="total">₹0</div>
-        <div class="closeShopping">Close</div>
-      </div>
+        <h1>Cart</h1>
+        <ul class="listCard"></ul>
+        <div class="checkOut">
+            <div class="total">₹0</div>
+            <div class="closeShopping">Close</div>
+        </div>
     </div>
     <script src="app.js"></script>
-  </body>
+</body>
 </html>
